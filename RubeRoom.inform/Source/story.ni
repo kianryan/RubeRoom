@@ -132,6 +132,8 @@ After inserting an amphora into the rock pool: [Filling amphoras in the rock poo
 A scale called brass scale is here. "Brass scale".
 
 [Fire room]
+[A lights out (all lights on) problem]
+[Win condition is all braziers being lit at the same time.]
 
 [Create our new rules for this room.]
 
@@ -170,30 +172,28 @@ After printing the name of a lit brazier, say " (lit)".
 After printing the name of an unlit brazier, say " (unlit)".
 
 Snuffing is an action applying to one visible thing.
-Understand "snuffing [something]" as snuffing.
+Understand "snuff [something]" as snuffing.
 Understand "extinguish [something]" as snuffing.
 
 Check snuffing:
-	if the noun is not an brazier, say "What on earth are you trying to snuff?";
-	if the noun is not lit, say "But the brazier is not lit.".
+	if the noun is not an brazier, say "What on earth are you trying to snuff?" instead;
+	if the noun is not lit, say "But the brazier is not lit." instead.
 
 Carry out snuffing:
 	follow toggling rules for noun;
 	say "[left of noun] [noun] [right of noun]".
 
 [Create the room, and the objects within the room.]
-A room called The Fire Room is south of the Machine Room.  "You feel the temperature noticeably rise as you enter the room and smell oil in your nostrils.  You see six oil braziers on pedastals arranged in a circle."
+A room called The Fire Room is south of the Machine Room.  "You feel the temperature noticeably rise as you enter the room and smell oil in your nostrils.  You see five oil braziers on pedastals arranged in a circle."
 
 A brazier called first brazier is here.
 A brazier called second brazier is here.
-A brazier called third brazier is here.  The third brazier is lit.
-A brazier called fourth brazier is here.
-A brazier called fifth brazier is here.
-A brazier called sixth brazier is here.
+A brazier called third brazier is here.  Third brazier is lit.
+A brazier called fourth brazier is here.  Fourth brazier is lit.
+A brazier called fifth brazier is here.  Fifth brazier is lit.
 
-The left of first brazier is sixth brazier.  The right of first brazier is second brazier.
+The left of first brazier is fifth brazier.  The right of first brazier is second brazier.
 The left of second brazier is first brazier.  The right of second brazier is third brazier.
 The left of third brazier is second brazier.  The right of third brazier is fourth brazier.
 The left of fourth brazier is third brazier.  The right of fourth brazier is fifth brazier.
-The left of fifth brazier is fourth brazier.  The right of fifth brazier is sixth brazier.
-The left of sixth brazier is fifth brazier.  The right of sixth brazier is first brazier.
+The left of fifth brazier is fourth brazier.  The right of fifth brazier is first brazier.
