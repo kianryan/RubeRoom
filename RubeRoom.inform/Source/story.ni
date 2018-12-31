@@ -153,6 +153,11 @@ A toggling rule:
 		now right of noun is lit;
 	otherwise:
 		now right of noun is unlit;
+	follow brazier winning rule;
+
+This is the brazier winning rule: [Have we won yet?]
+	if all braziers are lit:
+		say "Well done."
 
 Instead of burning a brazier:
 	if noun is lit:
