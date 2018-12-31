@@ -119,10 +119,10 @@ A rock pool is here.  "The rock pool contains crystal clear water.  It is consta
 The rock pool is an open container.
 The rock pool is fixed in place.
 
-A amphora called large amphora is here. "Large amphora".
+A amphora called large amphora is here.
 The volume of the large amphora is 5.
 
-A amphora called small amphora is here. "Small amphora".
+A amphora called small amphora is here.
 The volume of the small amphora is 3.
 
 After inserting an amphora into the rock pool: [Filling amphoras in the rock pool]
@@ -130,3 +130,70 @@ After inserting an amphora into the rock pool: [Filling amphoras in the rock poo
 	say "The amphora has filled to the brim with crystal clear water."
 
 A scale called brass scale is here. "Brass scale".
+
+[Fire room]
+
+[Create our new rules for this room.]
+
+Toggling is an object based rulebook.
+A toggling rule:
+	if noun is lit: [Toggle the target]
+		now noun is unlit;
+		say "Pfft.";
+	otherwise:
+		now noun is lit;
+		say "Woosh.";
+	if left of noun is unlit: [Toggle the L/R of the target]
+		now left of noun is lit;
+	otherwise:
+		now left of noun is unlit;
+	if right of noun is unlit:
+		now right of noun is lit;
+	otherwise:
+		now right of noun is unlit;
+
+Instead of burning a brazier:
+	if noun is lit:
+		say "This brazier is already lit...";
+	otherwise:
+		follow toggling rules for noun;
+		say "[left of noun] [noun] [right of noun]";
+
+[Create kinds and associated actions]
+A brazier is a kind of lit thing.
+A brazier is fixed in place.
+A brazier is usually unlit.
+A brazier has a brazier called left.
+A brazier has a brazier called right.
+
+After printing the name of a lit brazier, say " (lit)".
+After printing the name of an unlit brazier, say " (unlit)".
+
+Snuffing is an action applying to one visible thing.
+Understand "snuffing [something]" as snuffing.
+Understand "extinguish [something]" as snuffing.
+
+Check snuffing:
+	if the noun is not an brazier, say "What on earth are you trying to snuff?";
+	if the noun is not lit, say "But the brazier is not lit.".
+
+Carry out snuffing:
+	follow toggling rules for noun;
+	say "[left of noun] [noun] [right of noun]".
+
+[Create the room, and the objects within the room.]
+A room called The Fire Room is south of the Machine Room.  "You feel the temperature noticeably rise as you enter the room and smell oil in your nostrils.  You see six oil braziers on pedastals arranged in a circle."
+
+A brazier called first brazier is here.
+A brazier called second brazier is here.
+A brazier called third brazier is here.  The third brazier is lit.
+A brazier called fourth brazier is here.
+A brazier called fifth brazier is here.
+A brazier called sixth brazier is here.
+
+The left of first brazier is sixth brazier.  The right of first brazier is second brazier.
+The left of second brazier is first brazier.  The right of second brazier is third brazier.
+The left of third brazier is second brazier.  The right of third brazier is fourth brazier.
+The left of fourth brazier is third brazier.  The right of fourth brazier is fifth brazier.
+The left of fifth brazier is fourth brazier.  The right of fifth brazier is sixth brazier.
+The left of sixth brazier is fifth brazier.  The right of sixth brazier is first brazier.
